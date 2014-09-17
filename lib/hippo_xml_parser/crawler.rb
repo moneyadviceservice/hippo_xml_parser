@@ -1,15 +1,18 @@
 module HippoXmlParser
   class Crawler
     TYPES = [
-      'contentauthoringwebsite:Guide'
-      'contentauthoringwebsite:ActionPlan'
-      'contentauthoringwebsite:ToolPage'
-      'contentauthoringwebsite:StaticPage'
-      'contentauthoringwebsite:Guide'
-      'contentauthoringwebsite:Guide'
+      'contentauthoringwebsite:Guide',
+      'contentauthoringwebsite:ActionPlan',
+      'contentauthoringwebsite:ToolPage',
+      'contentauthoringwebsite:StaticPage',
+      'contentauthoringwebsite:News'
     ]
-    def initialize(doc)
+
+    attr_reader :types
+
+    def initialize(doc, types=TYPES)
       @doc = doc
+      @types = types
     end
 
     def nodes(doc)
@@ -27,9 +30,8 @@ module HippoXmlParser
 
 
     def crawl(doc)
-      if type?(doc, TYPES)
-        puts "found an article"
-        return Article.new(doc)
+      if type?(doc, types)
+        Article.new(doc)
       else
         doc.children.map {|e| crawl(e) }
       end

@@ -1,5 +1,4 @@
 require 'nokogiri'
-require 'pry'
 require 'time'
 
 require 'hippo_xml_parser/crawler'
@@ -15,13 +14,3 @@ module HippoXmlParser
     Crawler.new(Nokogiri::XML(doc)).all
   end
 end
-
-
-
-
-
-
-
-
-
-
