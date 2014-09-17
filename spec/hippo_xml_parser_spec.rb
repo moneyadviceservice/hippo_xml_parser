@@ -25,6 +25,8 @@ money.&lt;/body&gt;&lt;/html&gt;) }
       expect(subject.updated_by).to       eql('jlaney')
       expect(subject.locale).to           eql('en')
       expect(subject.body).to             eql(body)
+      expect(subject.meta_description).to eql(nil)
+      expect(subject.title_tag).to        eql(nil)
     end
   end
 end

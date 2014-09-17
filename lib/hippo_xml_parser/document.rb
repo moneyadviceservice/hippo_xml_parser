@@ -35,7 +35,8 @@ module HippoXmlParser
     end
 
     def fetch(name)
-      find_property(name).value
+      prop = find_property(name)
+      prop ? prop.value : nil
     end
   end
 end

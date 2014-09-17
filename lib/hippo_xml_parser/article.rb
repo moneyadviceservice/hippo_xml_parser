@@ -4,6 +4,10 @@ module HippoXmlParser
       Body.new(find_node('contentauthoringwebsite:body').doc).to_s
     end
 
+    def meta_description
+      fetch('contentauthoringwebsite:meta_description')
+    end
+
     def created_at
       Time.parse(fetch('hippostdpubwf:creationDate'))
     end
@@ -26,6 +30,10 @@ module HippoXmlParser
 
     def title
       fetch('contentauthoringwebsite:title')
+    end
+
+    def title_tag
+      fetch('contentauthoringwebsite:title_tag')
     end
 
     def preview
