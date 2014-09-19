@@ -10,9 +10,9 @@ module HippoXmlParser
 
     attr_reader :types
 
-    def initialize(doc, types=TYPES)
+    def initialize(doc, types=[])
       @doc = doc
-      @types = types
+      @types = Array(types).empty? ? TYPES : Array(types)
     end
 
     def nodes(doc)
@@ -27,7 +27,6 @@ module HippoXmlParser
         end
       end.flatten.compact.first
     end
-
 
     def crawl(doc)
       if type?(doc, types)

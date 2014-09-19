@@ -4,7 +4,7 @@ describe HippoXmlParser do
   describe 'parsing' do
     let(:xml) { File.read('spec/fixtures/example.xml') }
     let(:parsed) { HippoXmlParser.parse(xml) }
-    let(:body)   { %q(&lt;html&gt;&lt;body&gt;&lt;p class="intro"&gt;&lt;img src="binaries/content/gallery/contentauthoringwebsite/borrowing/do-you-need-to-borrow-money.jpg/do-you-need-to-borrow-money.jpg/hippogallery:original"/&gt;Before
+    let(:body)   { %q(&lt;html&gt;&lt;body&gt;&lt;p class="intro"&gt;&lt;img src="/borrowing/do-you-need-to-borrow-money.jpg/do-you-need-to-borrow-money.jpg/hippogallery:original"/&gt;Before
 you sign up for a credit card, bank loan or store card, or add to an existing
 card or loan it makes sense to think about whether you really need to borrow
 money.&lt;/body&gt;&lt;/html&gt;) }

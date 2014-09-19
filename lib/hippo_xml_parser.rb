@@ -10,7 +10,7 @@ require 'hippo_xml_parser/body'
 require 'hippo_xml_parser/version'
 
 module HippoXmlParser
-  def self.parse(doc)
-    Crawler.new(Nokogiri::XML(doc)).all
+  def self.parse(doc, types=[])
+    Crawler.new(Nokogiri::XML(doc), types).all
   end
 end
