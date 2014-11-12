@@ -27,6 +27,7 @@ money.&lt;/body&gt;&lt;/html&gt;) }
       expect(subject.body).to             eql(body)
       expect(subject.meta_description).to eql(nil)
       expect(subject.title_tag).to        eql(nil)
+      expect(subject.translation_id).to   eql('7aa69e4e-1033-4e33-a625-bffadedfda64')
     end
   end
 end

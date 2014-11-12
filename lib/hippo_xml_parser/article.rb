@@ -48,6 +48,10 @@ module HippoXmlParser
       fetch('hippotranslation:locale')
     end
 
+    def translation_id
+      fetch('hippotranslation:id')
+    end
+
     def inspect
       "#<Article id=#{id} state=#{state} length=#{body.length}>"
     end
